@@ -48,6 +48,7 @@ const StartGameScreen = props => {
   };
 
   let confirmedOutput;
+  // This is the hotfix
 
   if (confirmed) {
     confirmedOutput = (
