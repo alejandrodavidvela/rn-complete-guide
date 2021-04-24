@@ -48,6 +48,7 @@ const StartGameScreen = props => {
   };
 
   let confirmedOutput;
+  // Finish the new footer [issue 53]
 
   if (confirmed) {
     confirmedOutput = (
