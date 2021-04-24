@@ -49,6 +49,7 @@ const StartGameScreen = props => {
 
   let confirmedOutput;
   // This is the hotfix
+  // Finish the new footer [issue 53]
 
   if (confirmed) {
     confirmedOutput = (
@@ -120,6 +121,7 @@ const styles = StyleSheet.create({
     width: 300,
     maxWidth: '80%',
     alignItems: 'center'
+    // Create new footer
   },
   buttonContainer: {
     flexDirection: 'row',
