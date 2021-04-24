@@ -48,9 +48,7 @@ const StartGameScreen = props => {
   };
 
   let confirmedOutput;
-  // This is the hotfix
-  // Finish the new footer [issue 53]
-  // Testing this out
+  
 
   if (confirmed) {
     confirmedOutput = (
