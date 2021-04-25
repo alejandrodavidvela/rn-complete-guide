@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, Image } from 'react-native';
+import { ScrollView, Dimensions, View, Text, StyleSheet, Button, Image } from 'react-native';
 import DefaultStyles from '../constants/default-styles'
 import Colors from '../constants/colors'
 import MainButton from '../components/MainButton'
 
 const GameOverScreen = props => {
   return (
+    <ScrollView>
     <View style={styles.screen}>
       <Text style={DefaultStyles.title}>The Game is Over!</Text>
       <View style={styles.imageContainer}>
@@ -13,7 +14,7 @@ const GameOverScreen = props => {
         
         style={styles.image} 
         source={require('../assets/success.jpg')}
-        //source={{uri: 'https://miro.medium.com/max/2400/0*2OlgFOLdERlGJ0ec.png'}}
+        // source={{uri: 'https://miro.medium.com/max/2400/0*2OlgFOLdERlGJ0ec.png'}}
         resizeMode="cover"
         />
         </View>
@@ -29,6 +30,7 @@ const GameOverScreen = props => {
       
       <MainButton onPress={props.onRestart}>GAME OVER</MainButton>
     </View>
+    </ScrollView>
   );
 };
 
@@ -36,20 +38,21 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: Dimensions.get('window').height / 40
   },
   image:{
     width: '100%',
     height: '100%'
   },
   imageContainer:{
-    width: 300,
-    height: 300,
-    borderRadius: 150,
+    width: Dimensions.get('window').width * 0.7,
+    height: Dimensions.get('window').width * 0.7,
+    borderRadius: Dimensions.get('window').width * 0.7 / 2,
     borderWidth: 3,
     borderColor: 'black',
     overflow: 'hidden',
-    marginVertical: 30
+    marginVertical: Dimensions.get('window').height / 30
   },
   highlight:{
     color: Colors.primary,
@@ -57,11 +60,11 @@ const styles = StyleSheet.create({
   },
   resultContainer:{
     marginHorizontal: 20,
-    marginVertical: 15
+    marginVertical: Dimensions.get('window').height / 60
   },
   resultText:{
     textAlign: 'center',
-    fontSize: 20
+    fontSize: Dimensions.get('window').height < 400 ? 16 : 20
   }
 });
 
